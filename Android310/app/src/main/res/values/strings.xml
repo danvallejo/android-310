@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android310</string>
+    <string name="search_hint">Search data...</string>
+    <string name="title_activity_searchable">SearchableActivity</string>
 </resources>

@@ -8,6 +8,14 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import android.view.Menu;
+import android.os.Build;
+import android.view.MenuItem;
+import android.support.v7.widget.SearchView;
+import android.app.SearchManager;
+import android.content.Context;
+import android.app.SearchableInfo;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,5 +38,32 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+
+    @OnClick(R.id.uxSearch)
+    public void onSearch() {
+        onSearchRequested();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+            // Get the SearchView and set the searchable configuration
+            MenuItem menuItem = menu.findItem(R.id.action_search);
+            SearchView searchView = (SearchView) menuItem.getActionView();
+
+            SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+            SearchableInfo info = searchManager.getSearchableInfo(getComponentName());
+
+            // Assumes current activity is the searchable activity
+            searchView.setSearchableInfo(info);
+            searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+        }
+
+        return true;
     }
 }
