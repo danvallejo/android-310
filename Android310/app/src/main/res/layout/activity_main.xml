@@ -16,6 +16,12 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/uxSensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor" />
+
+        <Button
             android:id="@+id/uxSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

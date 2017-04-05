@@ -1,5 +1,6 @@
 package com.cstructor.android310;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 import android.view.Menu;
 import android.os.Build;
 import android.view.MenuItem;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.uxSnackbar)
-    public void onSnackbar(View view){
+    public void onSnackbar(View view) {
         Snackbar
                 .make(view, "I want a carrot", Snackbar.LENGTH_LONG)
                 .setAction("I want cake", new View.OnClickListener() {
@@ -40,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxSensor)
+    public void onSensor() {
+        Intent intent = new Intent(this, SensorActivity.class);
+        startActivity(intent);
+    }
 
     @OnClick(R.id.uxSearch)
     public void onSearch() {
@@ -51,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             // Get the SearchView and set the searchable configuration
             MenuItem menuItem = menu.findItem(R.id.action_search);
             SearchView searchView = (SearchView) menuItem.getActionView();
