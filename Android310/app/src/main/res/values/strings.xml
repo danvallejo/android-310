@@ -3,4 +3,5 @@
     <string name="search_hint">Search data...</string>
     <string name="title_activity_searchable">SearchableActivity</string>
     <string name="title_activity_sensor">SensorActivity</string>
+    <string name="title_activity_rotation_vector_demo">RotationVectorDemo</string>
 </resources>

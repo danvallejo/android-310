@@ -2,13 +2,13 @@ package com.cstructor.android310;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ShareActionProvider;
 import android.view.View;
 import android.widget.Toast;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 import android.view.Menu;
 import android.os.Build;
@@ -18,8 +18,12 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.app.SearchableInfo;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 public class MainActivity extends AppCompatActivity {
+    private Intent mShareIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+        mShareIntent = new Intent();
+        mShareIntent.setAction(Intent.ACTION_SEND);
+        mShareIntent.setType("text/plain");
+        mShareIntent.putExtra(Intent.EXTRA_TEXT, "From me to you, this text is new.");
+
     }
 
     @OnClick(R.id.uxSnackbar)
@@ -42,6 +52,18 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxRotation)
+    public void onRotation() {
+        Intent intent = new Intent(this, RotationVectorDemo.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.uxCompass)
+    public void onCompass() {
+        Intent intent = new Intent(this, CompassActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxSensor)
     public void onSensor() {
         Intent intent = new Intent(this, SensorActivity.class);
@@ -53,10 +75,22 @@ public class MainActivity extends AppCompatActivity {
         onSearchRequested();
     }
 
+    private ShareActionProvider mShareActionProvider;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        // Locate MenuItem with ShareActionProvider
+        MenuItem item = menu.findItem(R.id.menu_item_share);
+
+        // Fetch and store ShareActionProvider
+        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+
+        if (mShareActionProvider != null) {
+            mShareActionProvider.setShareIntent(mShareIntent);
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             // Get the SearchView and set the searchable configuration

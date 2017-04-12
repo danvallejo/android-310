@@ -9,6 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.cstructor.android310.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+        <provider
             android:name=".MySuggestionProvider"
             android:authorities="com.cstructor.android310.MySuggestionProvider" />
 
@@ -39,7 +48,24 @@
         <activity
             android:name=".SensorActivity"
             android:label="@string/title_activity_sensor"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CompassActivity" />
+        <activity
+            android:name=".RotationVectorDemo"
+            android:label="@string/title_activity_rotation_vector_demo"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".FileSelectActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

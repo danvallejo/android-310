@@ -46,7 +46,7 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
         Log.d("mSensor=", mSensor.getName());
 
         List<Sensor> deviceSensors = mSensorManager.getSensorList(Sensor.TYPE_ALL);
