@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxRetrofit)
+    public void onretro() {
+        Intent intent = new Intent(this, OpenWeatherActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxOkHttp)
     public void onOkHttp() {
         Intent intent = new Intent(this, OkHttpActivity.class);

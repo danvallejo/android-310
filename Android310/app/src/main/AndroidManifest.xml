@@ -74,6 +74,10 @@
         <activity
             android:name=".OkHttpActivity"
             android:label="@string/title_activity_ok_http"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OpenWeatherActivity"
+            android:label="@string/title_activity_open_weather"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
