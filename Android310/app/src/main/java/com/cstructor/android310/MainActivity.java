@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxVolley)
+    public void onVOlley() {
+        Intent intent = new Intent(this, VolleyActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxRotation)
     public void onRotation() {
         Intent intent = new Intent(this, RotationVectorDemo.class);
