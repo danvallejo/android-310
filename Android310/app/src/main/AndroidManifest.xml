@@ -70,6 +70,10 @@
         <activity
             android:name=".VolleyActivity"
             android:label="@string/title_activity_volley"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OkHttpActivity"
+            android:label="@string/title_activity_ok_http"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

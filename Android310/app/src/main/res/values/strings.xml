@@ -5,4 +5,5 @@
     <string name="title_activity_sensor">SensorActivity</string>
     <string name="title_activity_rotation_vector_demo">RotationVectorDemo</string>
     <string name="title_activity_volley">VolleyActivity</string>
+    <string name="title_activity_ok_http">OkHttpActivity</string>
 </resources>

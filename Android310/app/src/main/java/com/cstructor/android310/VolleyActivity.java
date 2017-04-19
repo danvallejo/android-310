@@ -21,6 +21,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.okhttp.OkHttpClient;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -60,7 +61,8 @@ public class VolleyActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Instantiate the RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        //RequestQueue requestQueue = Volley.newRequestQueue(this);
+        RequestQueue requestQueue = Volley.newRequestQueue(this, new OkHttpStack(new OkHttpClient()));
         String url ="http://www.google.com";
 
         // Request a string response from the provided URL.

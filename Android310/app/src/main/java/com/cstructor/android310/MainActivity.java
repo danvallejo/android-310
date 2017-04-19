@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxOkHttp)
+    public void onOkHttp() {
+        Intent intent = new Intent(this, OkHttpActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxVolley)
     public void onVOlley() {
         Intent intent = new Intent(this, VolleyActivity.class);
