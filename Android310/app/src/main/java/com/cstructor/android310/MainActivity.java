@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxConnectivity)
+    public void onConnectivity() {
+        Intent intent = new Intent(this, ConnectivityActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxRetrofit)
     public void onretro() {
         Intent intent = new Intent(this, OpenWeatherActivity.class);

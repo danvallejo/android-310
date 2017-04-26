@@ -16,6 +16,12 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/uxConnectivity"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Connectivity" />
+
+        <Button
             android:id="@+id/uxRetrofit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
