@@ -16,6 +16,12 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/uxBluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Chat" />
+
+        <Button
             android:id="@+id/uxConnectivity"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

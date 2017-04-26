@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxBluetooth)
+    public void onBluetooth(View view){
+        Intent intent = new Intent(this, com.cstructor.android310.bluetooth.BluetoothActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxConnectivity)
     public void onConnectivity() {
         Intent intent = new Intent(this, ConnectivityActivity.class);
