@@ -235,7 +235,7 @@ public class BluetoothActivity extends AppCompatActivity {
                     // construct a string from the valid bytes in the buffer
                     String readMessage;
                     try {
-                        readMessage = new String(readBuf, 0, msg.arg1, "UTF-16");
+                        readMessage = new String(readBuf, 0, msg.arg1, "UTF-8");
                     } catch (UnsupportedEncodingException e) {
                         // Should complain
                         readMessage = "";
