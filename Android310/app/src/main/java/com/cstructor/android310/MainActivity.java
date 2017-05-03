@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxRecyclerView)
+    public void onRecyclerView(View view){
+        Intent intent = new Intent(this, RecyclerViewActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxSticky)
     public void onSticky(View view){
         Intent intent = new Intent(this, StickyNotesActivity.class);

@@ -137,14 +137,18 @@
             android:name=".StickyNotesActivity"
             android:label="@string/title_activity_sticky_notes"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
-
         </activity>
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:label="@string/title_activity_recycler_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

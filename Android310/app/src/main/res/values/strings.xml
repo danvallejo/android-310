@@ -42,4 +42,5 @@
     <string name="title_activity_sticky_notes">StickyNotesActivity</string>
     <string name="write_to_tag">Write to Tag</string>
     <string name="default_note_text">Edit me!</string>
+    <string name="title_activity_recycler_view">RecyclerViewActivity</string>
 </resources>
