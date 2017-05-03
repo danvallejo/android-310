@@ -57,7 +57,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         GettyService gettyService = retrofit.create(GettyService.class);
 
-        Call<ImagesModel> call = gettyService.getImagesByPhrase("cats");
+        Call<ImagesModel> call = gettyService.getImagesByPhrase("kittens");
 
         call.enqueue(new Callback<ImagesModel>() {
             @Override
@@ -66,6 +66,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 ImagesModel imagesModel = response.body();
 
                 mAdapter = new RecyclerAdapter(RecyclerViewActivity.this, imagesModel.images);
+
+                // divider code
+                mRecyclerView.addItemDecoration(new DividerItemDecoration(
+                        RecyclerViewActivity.this, LinearLayoutManager.VERTICAL));
+
                 mRecyclerView.setAdapter(mAdapter);
             }
 
