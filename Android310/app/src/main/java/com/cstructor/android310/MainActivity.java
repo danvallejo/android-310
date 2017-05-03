@@ -52,6 +52,19 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxSticky)
+    public void onSticky(View view){
+        Intent intent = new Intent(this, StickyNotesActivity.class);
+        startActivity(intent);
+    }
+
+
+    @OnClick(R.id.uxNfcWriter)
+    public void onWriter(View view){
+        Intent intent = new Intent(this, NfcWriterActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxBluetooth)
     public void onBluetooth(View view){
         Intent intent = new Intent(this, com.cstructor.android310.bluetooth.BluetoothActivity.class);

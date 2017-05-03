@@ -110,13 +110,12 @@
             android:name=".NfcReaderActivity"
             android:label="@string/title_activity_nfc_reader"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
 
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:mimeType="text/plain"/>
+                <data android:mimeType="text/plain" />
 
                 <!--
                     <action android:name="android.nfc.action.NDEF_DISCOVERED" />
@@ -127,11 +126,25 @@
                         android:scheme="http" />
 
                     <action android:name="android.intent.category.DEFAULT" />
-                    -->
+                -->
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NfcWriterActivity"
+            android:label="@string/title_activity_nfc_writer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StickyNotesActivity"
+            android:label="@string/title_activity_sticky_notes"
+            android:theme="@style/AppTheme.NoActionBar">
 
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
 
+        </activity>
     </application>
 
 </manifest>

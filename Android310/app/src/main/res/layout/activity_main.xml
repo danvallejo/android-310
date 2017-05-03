@@ -16,6 +16,18 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/uxSticky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sticky Notes" />
+
+        <Button
+            android:id="@+id/uxNfcWriter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nfc Writer" />
+
+        <Button
             android:id="@+id/uxBluetooth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

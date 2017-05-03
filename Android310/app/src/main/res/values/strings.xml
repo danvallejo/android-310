@@ -34,4 +34,12 @@
     <string name="title_connected_to">connected: </string>
     <string name="title_not_connected">not connected</string>
     <string name="title_activity_nfc_reader">NfcReaderActivity</string>
+    <string name="title_activity_nfc_writer">NfcWriterActivity</string>
+    <string name="tag_dectected">Tag was detected</string>
+    <string name="error_detected">Error detected</string>
+    <string name="ok_writing">Ok writing to tag</string>
+    <string name="error_writing">Error writing tag</string>
+    <string name="title_activity_sticky_notes">StickyNotesActivity</string>
+    <string name="write_to_tag">Write to Tag</string>
+    <string name="default_note_text">Edit me!</string>
 </resources>
