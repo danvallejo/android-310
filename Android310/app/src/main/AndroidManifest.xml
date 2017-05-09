@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -148,7 +149,15 @@
         <activity
             android:name=".RecyclerViewActivity"
             android:label="@string/title_activity_recycler_view"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LocationActivity"
+            android:label="@string/title_activity_location"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".FetchAddressIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

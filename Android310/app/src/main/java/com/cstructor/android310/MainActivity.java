@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxLocation)
+    public void onLocation(View view){
+        Intent intent = new Intent(this, LocationActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxRecyclerView)
     public void onRecyclerView(View view){
         Intent intent = new Intent(this, RecyclerViewActivity.class);

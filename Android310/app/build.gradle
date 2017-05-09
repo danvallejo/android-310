@@ -33,6 +33,8 @@ dependencies {
 
     compile 'com.android.support:recyclerview-v7:24.1.1'
 
+    compile 'com.google.android.gms:play-services:8.1.0'
+
     compile 'org.apache.httpcomponents:httpcore:4.4.6'
 
 
