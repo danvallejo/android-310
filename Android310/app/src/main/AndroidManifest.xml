@@ -157,7 +157,15 @@
 
         <service
             android:name=".FetchAddressIntentService"
-            android:exported="false"></service>
+            android:exported="false" />
+        <service
+            android:name=".GeofenceTransitionsIntentService"
+            android:exported="false" />
+
+        <activity
+            android:name=".GeofenceActivity"
+            android:label="@string/title_activity_geofence"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
