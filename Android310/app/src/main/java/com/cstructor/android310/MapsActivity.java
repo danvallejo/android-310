@@ -37,11 +37,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @OnClick(R.id.uxSeattle)
     public void onSeattle(View view){
         LatLng seattle = new LatLng(47.608887, -122.335502);
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(seattle), 2000, null);
     }
 
     @OnClick(R.id.uxSydney)
     public void onSydney(View view){
         LatLng sydney = new LatLng(-33.873035, 151.254741);
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney), 1000, null);
     }
 
     /**
