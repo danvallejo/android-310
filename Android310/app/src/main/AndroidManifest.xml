@@ -15,6 +15,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.cstructor.android310.fileprovider"
@@ -165,6 +169,10 @@
         <activity
             android:name=".GeofenceActivity"
             android:label="@string/title_activity_geofence"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

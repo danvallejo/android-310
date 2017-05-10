@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxMaps)
+    public void onMaps(View view){
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxGeofencing)
     public void onGeofencing(View view){
         Intent intent = new Intent(this, GeofenceActivity.class);
