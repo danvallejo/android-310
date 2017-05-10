@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxFire)
+    public void onFirebase(View view){
+        Intent intent = new Intent(this, FirebaseActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxMaps)
     public void onMaps(View view){
         Intent intent = new Intent(this, MapsActivity.class);

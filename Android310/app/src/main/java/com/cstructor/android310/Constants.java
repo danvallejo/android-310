@@ -13,4 +13,6 @@ public final class Constants {
     public static final String RESULT_DATA_KEY = PACKAGE_NAME + ".RESULT_DATA_KEY";
 
     public static final String LOCATION_DATA_EXTRA = PACKAGE_NAME + ".LOCATION_DATA_EXTRA";
+
+    public static final String FIREBASE_URL = "https://android-310.firebaseio.com";
 }
