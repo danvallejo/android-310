@@ -2,6 +2,7 @@ package com.cstructor.android310;
 
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,8 @@ import com.google.android.gms.location.LocationServices;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
+import rx.functions.Action1;
 
 public class GeofenceActivity extends AppCompatActivity
         implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, ResultCallback {
@@ -68,6 +71,17 @@ public class GeofenceActivity extends AppCompatActivity
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        ReactiveLocationProvider locationProvider = new ReactiveLocationProvider(this);
+
+        locationProvider.getLastKnownLocation()
+                .subscribe(new Action1<Location>() {
+                    @Override
+                    public void call(Location location) {
+                        mLatitude.setText(Double.toString(location.getLatitude()));
+                        mLongitude.setText(Double.toString(location.getLongitude()));
+                    }
+                });
 
         buildGoogleApiClient();
     }
