@@ -55,6 +55,10 @@ dependencies {
     compile 'com.firebase:firebase-client-android:2.4.0'
     compile 'com.firebaseui:firebase-ui:0.2.2'
 
+    compile 'com.amazonaws:aws-android-sdk-core:2.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb:2.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.+'
+
     compile 'com.google.android.gms:play-services:8.1.0'
 
     compile 'org.apache.httpcomponents:httpcore:4.4.6'

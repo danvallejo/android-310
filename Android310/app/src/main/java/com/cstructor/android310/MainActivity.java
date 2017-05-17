@@ -20,17 +20,28 @@ import android.app.SearchableInfo;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+import android.view.Window;
+import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
     private Intent mShareIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        TitleView titleView = new TitleView(this);
+        titleView.setKeepScreenOn(true);
 
-        ButterKnife.bind(this);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        super.onCreate(savedInstanceState);
+
+        setContentView(titleView);
+
+        //super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_main);
+
+        //ButterKnife.bind(this);
 
         mShareIntent = new Intent();
         mShareIntent.setAction(Intent.ACTION_SEND);
@@ -50,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    @OnClick(R.id.uxAmazon)
+    public void onAmazon(View view){
+        Intent intent = new Intent(this, AmazonActivity.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.uxFire)

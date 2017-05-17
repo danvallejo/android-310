@@ -16,6 +16,12 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/uxAmazon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazon" />
+
+        <Button
             android:id="@+id/uxFire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
