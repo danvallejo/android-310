@@ -22,13 +22,23 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import android.view.Window;
 import android.view.WindowManager;
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
     private Intent mShareIntent;
 
+    @Inject
+    MyService mService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TitleView titleView = new TitleView(this);
+
+        MyApplication.getMyComponent().inject(this);
+
+        // Another way to get the injection
+        MyService m = MyApplication.getMyComponent().myService();
+
+       /* TitleView titleView = new TitleView(this);
         titleView.setKeepScreenOn(true);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -37,11 +47,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(titleView);
+*/
 
-        //super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        //ButterKnife.bind(this);
+        ButterKnife.bind(this);
 
         mShareIntent = new Intent();
         mShareIntent.setAction(Intent.ACTION_SEND);
