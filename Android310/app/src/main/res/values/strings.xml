@@ -85,4 +85,5 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_firebase">FirebaseActivity</string>
     <string name="title_activity_amazon">AmazonActivity</string>
+    <string name="title_activity_rx_android">RxAndroidActivity</string>
 </resources>

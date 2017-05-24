@@ -74,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    @OnClick(R.id.uxRx)
+    public void onRx(View view){
+        Intent intent = new Intent(this, RxAndroidActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxAmazon)
     public void onAmazon(View view){
         Intent intent = new Intent(this, AmazonActivity.class);

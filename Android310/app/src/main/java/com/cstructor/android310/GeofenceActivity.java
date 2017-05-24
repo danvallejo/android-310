@@ -25,7 +25,7 @@ import com.google.android.gms.location.LocationServices;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
+//import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
 import rx.functions.Action1;
 
 public class GeofenceActivity extends AppCompatActivity
@@ -72,16 +72,16 @@ public class GeofenceActivity extends AppCompatActivity
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ReactiveLocationProvider locationProvider = new ReactiveLocationProvider(this);
+        //ReactiveLocationProvider locationProvider = new ReactiveLocationProvider(this);
 
-        locationProvider.getLastKnownLocation()
-                .subscribe(new Action1<Location>() {
-                    @Override
-                    public void call(Location location) {
-                        mLatitude.setText(Double.toString(location.getLatitude()));
-                        mLongitude.setText(Double.toString(location.getLongitude()));
-                    }
-                });
+        //locationProvider.getLastKnownLocation()
+        //        .subscribe(new Action1<Location>() {
+        //            @Override
+        //            public void call(Location location) {
+        //                mLatitude.setText(Double.toString(location.getLatitude()));
+        //                mLongitude.setText(Double.toString(location.getLongitude()));
+        //            }
+        //        });
 
         buildGoogleApiClient();
     }
